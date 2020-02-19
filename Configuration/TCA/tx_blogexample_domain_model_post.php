@@ -176,16 +176,13 @@ return [
         'tags' => [
             'exclude' => true,
             'label' => 'LLL:EXT:blog_example/Resources/Private/Language/locallang_db.xml:tx_blogexample_domain_model_post.tags',
+            'l10n_mode' => 'exclude',
             'config' => [
-                'type' => 'inline',
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_blogexample_domain_model_tag',
+                'foreign_table_where' => 'AND tx_blogexample_domain_model_tag.sys_language_uid = 0',
                 'MM' => 'tx_blogexample_post_tag_mm',
-                'appearance' => [
-                    'useCombination' => 1,
-                    'useSortable' => 1,
-                    'collapseAll' => 1,
-                    'expandSingle' => 1,
-                ]
             ]
         ],
         'comments' => [

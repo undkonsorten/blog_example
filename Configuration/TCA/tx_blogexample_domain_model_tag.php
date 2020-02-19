@@ -76,6 +76,7 @@ return [
         'posts' => [
             'exclude' => true,
             'label' => 'LLL:EXT:blog_example/Resources/Private/Language/locallang_db.xml:tx_blogexample_domain_model_tag.posts',
+            'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
@@ -84,6 +85,7 @@ return [
                 'autoSizeMax' => 30,
                 'multiple' => 0,
                 'foreign_table' => 'tx_blogexample_domain_model_post',
+                'foreign_table_where' => ' AND tx_blogexample_domain_model_post.sys_language_uid = 0',
                 'MM' => 'tx_blogexample_post_tag_mm',
                 'MM_opposite_field' => 'tags',
             ]
